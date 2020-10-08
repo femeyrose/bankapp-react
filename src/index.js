@@ -5,6 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
@@ -18,3 +19,4 @@ ReactDOM.render(
 serviceWorker.unregister();
 
 //imported bootstrap after installing (#npm i bootstrap)
+// import 'bootstrap/dist/css/bootstrap.min.css'-----this path is obtain from cmd while we install npm i bootstrap
