@@ -44,15 +44,14 @@ class App extends React.Component{
         <Login title="Login page from prop"/>
         </Route>
         <Route path="/functional-test">
-          <FunctionalTest /> 
+          <FunctionalTest  title="functional test title"/> 
           {/* now it will route to http://localhost:3000/functional-test*/}
         </Route>
-
         <Route path="/lists">
         <Lists />
         </Route>
-
-      </Switch>
+        </Switch>
+     
       
     </div>
     </BrowserRouter>
@@ -62,6 +61,7 @@ class App extends React.Component{
 
 }
 
+//component name always should be capital letter like -Login,Lists
 // we can use class component or functional component
 export default App;
 
@@ -135,3 +135,10 @@ export default App;
 //this method is called when the component is about to be removed
 //from the dom
 
+//routing order has importance
+//if we give <route path ="/">
+// <Login title="Login page from prop"/>
+//then only login component will be dispalyed, not the functional/lists, since all these starts with '/'
+//to avoid this we can place he route path of login comp last or use exact path="/"
+//<route exact path="/">
+// <Login title="Login page from prop"/>

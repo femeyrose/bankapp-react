@@ -1,5 +1,6 @@
 import React from 'react';
-import axios from 'axios'
+import axios from 'axios';
+import './Login.css'
 
 class Login extends React.Component{
     
@@ -58,16 +59,16 @@ class Login extends React.Component{
         
     //if the credentials true, .then will work otherwise .catch will catch the error
 
-    constructor(props){
-        super(props);
-    }
+    // constructor(props){
+    //     super(props);
+    // }
 
-    static getDerivedStateFromProps(props,state){}
+    // static getDerivedStateFromProps(props,state){}
 
     render(){
         if(this.state.showLogin==false){
             return(
-                <div>
+                <div style={{color:"red"}} className="loginContainer">
                     <p>Login is disabled</p>
                     <button onClick={()=>{
                     this.setState({
@@ -80,7 +81,12 @@ class Login extends React.Component{
         //if false, (showLogin is given as false in state) login is diabled is displayed
         //enable login button is clicked, then will enable to login
         //this is like ngIf in angular
-
+        //if the showLogin is true,then the below return (form to take acno)will work like the 
+        //else condition of 'if'
+        
+        //style should be applied as js objects- <div style=  {{ backGroundColor:"red"}}>, camel letter inside this
+        //we can use css to add styles, import this in the component (import './Login.css')
+        //use like ------- <div style={{color:"red"}} className="loginContainer">
 
         return (
         <div>
@@ -110,6 +116,13 @@ class Login extends React.Component{
 }
 
 export default Login;
+
+//react has only one way data binding (here using vallue and onChange)
+//in angular we can use 2 way data binding using ngModel
+
+//no validations are used in react, we use 'FORMIK' for having validations of the form
+//Formik is a third party library, we have import this
+
 
 
 /* <h1>{this.props.title}</h1>
@@ -141,3 +154,38 @@ these syntax js+html is called jsx */
 //react uses libraries-like third party library -forms,etc
 
 //conditional rendering--we use 'if'
+
+
+
+//setting environment variable
+//===============================================
+//1. #export REACT_APP_APP_URL=http://localhost:4000
+// handleSubmit=(e)=>{
+//    alert((process.env.NODE_ENV)
+//     alert("submit clicked");
+//     alert(this.state.acno+this.state.password);
+//     e.preventDefault();
+//     axios.post(process.env.REACT_APP_APP_URL+'/login',
+//     {
+//         acno:this.state.acno,
+//         password:this.state.password
+//     },
+//after #npm start, automatically it is 'development'
+//for #npm run build, 'production' will be done
+//after build we can see 'build' folder inside our 'bankapp-react' folder
+//after build we can run this by using #http-server
+//check in the browser using the IP add (127.0.0.1:8080) obtained in cmd after running the http-server
+
+//fetch API in js can be used instead of axios to connect ot the backend
+//fetch('http://google.com'),{
+//     method:"post",
+//     body:{
+
+//     }
+// }
+
+//axios and fetch are promise based, we use .then  and .catch for error msg
+
+
+//state- variable inside a components
+//props- variable getting from parent component to the child, for data transfer

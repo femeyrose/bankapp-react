@@ -20,3 +20,6 @@ serviceWorker.unregister();
 
 //imported bootstrap after installing (#npm i bootstrap)
 // import 'bootstrap/dist/css/bootstrap.min.css'-----this path is obtain from cmd while we install npm i bootstrap
+
+
+//<React.StrictMode> , strictmode is to get warnings when any version changes or updates happens
